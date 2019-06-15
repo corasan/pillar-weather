@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.59.9",
-    "react-native-chart-kit": "^3.0.0"
+    "react-native-chart-kit": "^3.0.0",
+    "react-native-svg": "^9.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
