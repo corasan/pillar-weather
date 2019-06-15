@@ -45,29 +45,19 @@ export default class App extends Component<Props, State> {
 
   getLocation = () => {
     this.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
-      console.log('setLocation', { latitude, longitude })
       this.setState({ lat: latitude, long: longitude });
       this.getWeather();
-      this.getForecast();
     });
   }
 
   getWeather = async () => {
     try {
       const res = await this.weatherRequest();
-      const { main, name } = await res.json();
-      this.setWeather({ name, ...main});
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  getForecast = async () => {
-    try {
-      const res = await this.weatherRequest('forecast');
-      const { list } = await res.json();
+      const forecastRes = await this.weatherRequest('forecast');
+      const { name, main: { temp, pressure, humidity } } = await res.json();
+      const { list } = await forecastRes.json();
       const forecast = list.slice(0, 6)
-      this.setState({ forecast })
+      this.setState({ name, forecast, temp, pressure, humidity });
     } catch (err) {
       console.log(err)
     }
