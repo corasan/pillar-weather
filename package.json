@@ -7,10 +7,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "16.8.6",
     "react-native": "0.59.9",
     "react-native-chart-kit": "^3.0.0",
-    "react-native-svg": "^9.5.1"
+    "react-native-svg": "^9.5.1",
+    "react-native-svg-charts": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
