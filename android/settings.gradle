@@ -1,0 +1,3 @@
+rootProject.name = 'pillarWeather'
+
+include ':app'
